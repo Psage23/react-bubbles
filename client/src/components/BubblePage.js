@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
+import {Link} from "react-router-dom"
 import {axiosWithAuth} from "./Utils/axiosWithAuth";
-import axios from "axios";
-
 import Bubbles from "./Bubbles";
 import ColorList from "./ColorList";
+
 
 const BubblePage = () => {
   const [colorList, setColorList] = useState([]);
@@ -21,6 +21,7 @@ useEffect(() => {
 
   return (
     <>
+      <Link to="/" className="btn">Exit</Link>
       <ColorList colors={colorList} updateColors={setColorList} />
       <Bubbles colors={colorList} />
     </>
